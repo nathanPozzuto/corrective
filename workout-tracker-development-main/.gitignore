@@ -1,0 +1,30 @@
+# v0 sandbox internal files
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+.snowflake/
+.v0-trash/
+.vercel/
+
+# Environment variables
+.env*.local
+
+# Common ignores
+node_modules
+.next/
+.DS_Store
+
+# Java / Maven (backend build output)
+backend/target/
+*.class
+
+# Maven wrapper (keep the scripts, ignore the downloaded jar)
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE / editor
+.idea/
+*.iml
+.settings/
+.classpath
+.project
+.vscode/
