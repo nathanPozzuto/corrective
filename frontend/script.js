@@ -1,3 +1,4 @@
+const apiUrl = "https://corrective-api.onrender.com";
 const button = document.getElementById('action-btn');
 const message = document.getElementById('message');
 
@@ -7,3 +8,10 @@ fetch('http://localhost:8080/api/health') .then(response => response.text()) .th
 button.addEventListener('click', () => {
   message.textContent = 'Setup confirmed! Your team can now view this dynamic feature.';
 });
+
+// whenever you need to call the backend
+fetch(`${apiUrl}/api/health`)
+  .then(response => response.json())
+  .then(data => console.log(data));
+
+  

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recovery Tracker API</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --teal: #0f766e;
+        --ink: #1c2b2a;
+        --muted: #5b6b6a;
+        --bg: #f4f7f6;
+        --card: #ffffff;
+        --border: #dbe5e3;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.6;
+      }
+      .wrap { max-width: 780px; margin: 0 auto; padding: 3rem 1.5rem; }
+      h1 { font-size: 1.9rem; margin: 0 0 0.25rem; }
+      .lead { color: var(--muted); margin: 0 0 2rem; }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 1.25rem 1.5rem;
+        margin-bottom: 1rem;
+      }
+      h2 { font-size: 1.05rem; margin: 0 0 0.75rem; color: var(--teal); }
+      code { background: #eef3f2; padding: 0.15rem 0.4rem; border-radius: 6px; font-size: 0.85em; }
+      pre { background: #0f1a19; color: #d7e4e2; padding: 1rem; border-radius: 10px; overflow-x: auto; }
+      table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+      td { padding: 0.35rem 0; border-bottom: 1px solid var(--border); vertical-align: top; }
+      td:first-child { width: 120px; font-weight: 600; color: var(--teal); }
+      a { color: var(--teal); }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>Recovery Tracker &mdash; Backend API</h1>
+      <p class="lead">Spring Boot service backing the workout &amp; recovery tracker. The static frontend in <code>../frontend</code> talks to these endpoints.</p>
+
+      <div class="card">
+        <h2>Run it</h2>
+        <pre>cd backend
+# Neon credentials are read from PGHOST / PGDATABASE / PGUSER / PGPASSWORD
+export PGHOST=... PGDATABASE=... PGUSER=... PGPASSWORD=...
+export AI_GATEWAY_API_KEY=...   # optional, enables handout scanning
+mvn spring-boot:run</pre>
+        <p>The API starts on <code>http://localhost:8080</code>. Then open <code>../frontend/index.html</code> in a browser (or serve the folder), and it will connect automatically.</p>
+      </div>
+
+      <div class="card">
+        <h2>Endpoints</h2>
+        <table>
+          <tr><td>Auth</td><td><code>POST /api/auth/sign-up</code> &middot; <code>/sign-in</code> &middot; <code>/sign-out</code> &middot; <code>GET /api/auth/me</code></td></tr>
+          <tr><td>Exercises</td><td><code>GET/POST /api/exercises</code> &middot; <code>DELETE /api/exercises/{id}</code></td></tr>
+          <tr><td>Workouts</td><td><code>GET/POST /api/workouts</code> &middot; <code>DELETE /api/workouts/{id}</code></td></tr>
+          <tr><td>Routines</td><td><code>GET/POST /api/routines</code> &middot; <code>DELETE /api/routines/{id}</code></td></tr>
+          <tr><td>Pain</td><td><code>GET/POST /api/pain</code> &middot; <code>DELETE /api/pain/{id}</code></td></tr>
+          <tr><td>Schedule</td><td><code>GET/POST /api/schedule</code> &middot; <code>DELETE /api/schedule/{id}</code></td></tr>
+          <tr><td>Plans</td><td><code>GET/POST /api/plans</code> &middot; <code>DELETE /api/plans/{id}</code></td></tr>
+          <tr><td>Scan</td><td><code>POST /api/scan-handout</code></td></tr>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>Auth</h2>
+        <p>Email + password. Sign-in returns a <code>token</code>; send it as <code>Authorization: Bearer &lt;token&gt;</code> on every request. All data is scoped to the authenticated user.</p>
+      </div>
+    </main>
+  </body>
+</html>
