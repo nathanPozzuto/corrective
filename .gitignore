@@ -1,3 +1,45 @@
+# =========================================================================
+# Java and Maven Build Artifacts
+# =========================================================================
+# Ignore the Maven target directory (compiled code, packages, etc.)
+**/target/
+target/
+
+# Ignore compiled Java class files
+*.class
+
+# Ignore Log files
+*.log
+
+# Ignore package files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# =========================================================================
+# IDE and System Settings (Optional but recommended)
+# =========================================================================
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Eclipse
+.metadata/
+.classpath
+.project
+.settings/
+*.launch
+
+# macOS system files
+.DS_Store
+
 ### Python ###
 __pycache__/
 *.py[cod]
