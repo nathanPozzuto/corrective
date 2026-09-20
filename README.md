@@ -1,5 +1,5 @@
 # corrective
-URL: [Clickable Text](https://corrective-theta.vercel.app/#/)
+URL: [Access CorrectivePT here](https://corrective-theta.vercel.app/#/)
 
 This is our Steelhacks 2026 Project. The team consisted of Nathan Pozzuto, Arjay Gralewski-Goel (GitHub Link), and Finn Petz (GitHub Link).
 For all 3 of us, this is our first actual coding project so we basically just used AI for everything (this choice seems justified because we were  
