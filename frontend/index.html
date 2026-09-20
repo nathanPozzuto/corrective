@@ -3,15 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collaborative Frontend</title>
+  <meta name="theme-color" content="#0f766e">
+  <meta name="description" content="Corrective — track workouts, rehab plans, routines, schedule, and pain recovery.">
+  <title>Corrective</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="container">
-    <h1>GitHub Collaboration Setup</h1>
-    <p id="message">Click the button to test JavaScript behavior.</p>
-    <button id="action-btn">Click Me</button>
-  </main>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s-7-4.35-9.5-8.5C1 9.5 2.5 5.5 6.5 5.5c2 0 3.5 1.5 5.5 4 2-2.5 3.5-4 5.5-4 4 0 5.5 4 4 7-2.5 4.15-9.5 8.5-9.5 8.5z"/>
+          </svg>
+        </span>
+        <div class="brand-text">
+          <strong>Corrective</strong>
+          <span>Recovery tracker</span>
+        </div>
+      </div>
+      <nav class="nav" id="side-nav"></nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+        <span class="theme-toggle-label">Theme</span>
+      </button>
+    </aside>
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s-7-4.35-9.5-8.5C1 9.5 2.5 5.5 6.5 5.5c2 0 3.5 1.5 5.5 4 2-2.5 3.5-4 5.5-4 4 0 5.5 4 4 7-2.5 4.15-9.5 8.5-9.5 8.5z"/>
+          </svg>
+        </span>
+        <strong>Corrective</strong>
+      </div>
+      <button class="theme-toggle compact" id="theme-toggle-mobile" type="button" aria-label="Toggle color theme">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </header>
+
+    <main class="content" id="app" tabindex="-1" aria-live="polite"></main>
+
+    <nav class="bottom-nav" id="bottom-nav" aria-label="Primary navigation"></nav>
+  </div>
+
+  <div class="dialog-root" id="dialog-root" aria-hidden="true"></div>
+  <div class="toast-stack" id="toast-stack" aria-live="assertive"></div>
 
   <script src="script.js"></script>
 </body>
